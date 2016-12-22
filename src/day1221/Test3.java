@@ -21,7 +21,7 @@ public class Test3 {
 		System.out.println(a); //20이 찍힌다. call by value == 변수가 다른 변수다.
 		
 		int[] arr ={1,2,3};
-		oo.sub(arr);
+		oo.sub(arr); // arr 는 래퍼런스 변수
 		System.out.println(arr[0]); //11 나온다. call by reference 
 		
 		
@@ -52,11 +52,13 @@ class User3 {
 		return ch >= 'a' && ch <= 'z' ? (char) (ch - 32) : ch;
 	} // upper 메소드 종료
 
+	
 	public boolean isUpper(char ch) {
 		// 대문자면 true , 소문자면 false
 		return ch >= 'A' && ch <= 'Z';
 	} // isUpper 메소드 종료
 
+	
 	public boolean isLeap(int year) {
 		// 윤년인지 판별
 		// 년도가 4의 배수이고 100의 배수가 아니거나 400의 배수이면
