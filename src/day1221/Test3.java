@@ -2,6 +2,8 @@ package day1221;
 
 public class Test3 {
 
+	
+	
 	public static void main(String[] args) {
 
 		User3 oo = new User3();
@@ -16,13 +18,24 @@ public class Test3 {
 		System.out.println(oo.grade(90));
 
 		int a=20; //
-		oo.sub(a); // a는 실 매개변수,
+		oo.sub(a); // a는 실 매개변수
 		
-		System.out.println(a); //20이 찍힌다. call by value == 변수가 다른 변수다.
+		System.out.println(a); //20이 찍힌다. call by value 
 		
 		int[] arr ={1,2,3};
 		oo.sub(arr); // arr 는 래퍼런스 변수
 		System.out.println(arr[0]); //11 나온다. call by reference 
+		//참조 (배열, 클래스형 변수, 인터페이스형)
+		
+		int[] n = {10,20,30}; // 0x10
+		System.out.println(n[0]); //10
+		
+		n=oo.sub2(); //0x200
+		System.out.println(n[0]); //1 , 원래 있던 0x10의 주소는 garbage collect가 회수한다.
+		
+		int k = oo.sub3(3,5,4,6,3);
+		System.out.println(k); //3+5+4+6+3
+		
 		
 		
 		
@@ -97,16 +110,36 @@ class User3 {
 
 	} // grade 메소드 종료
 
-	public void sub(int a) { //
+	public void sub(int a) { // 형식 매개변수, 실 매개변수와는 다른 영역에 위치한다.
 
 		a += 10;
 		//void인 경우 return 생략 가능
 	
 	} //sub 메소드 종료
 
-	public void sub(int[] n){
+	public void sub(int[] n){ //인자의 개수가 다르거나 인자의 데이터 타입이 다른 경우
 		
 		n[0] +=10;
+		
+	}
+	
+	public int[] sub2(){
+		
+		int[] n ={1,2,3}; //Ox200
+		
+		return n;
+		
+	}
+	
+	//주의 사항 public int sub3(String s,int ... n){} 1.비정형인수는 항상 우측에만 와야한다. 2.한번만 사용 가능하다.
+	//대표적인 것 printf, format
+	public int sub3(int ... n){ //비 정형 인자 , 5.0버전 이상부터, n은 배열처럼 사용하면 된다.
+		
+		int s=0;
+		for(int i=0;i<n.length;i++){
+			s+=n[i];
+		}
+		return s;
 		
 	}
 	
