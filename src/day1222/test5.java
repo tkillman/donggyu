@@ -8,31 +8,34 @@ public class test5 {
 	public static void main(String[] args) {
 
 		User1 oo = new User1();
-		oo.print(5);
+		oo.print(5); 
 
 		int sum = oo.sum(10);
-		System.out.println(sum);
+		System.out.println(sum);// 재귀메소드 1~n까지 더하는 메소드
 		
-		int result = oo.pow(2, 2);
+		int result = oo.pow(2, 2);// 재귀메소드 a 에 b승 하는 메소드
 		System.out.println(result);
 		
 		byte b =10;
-		oo.write(b);
+		oo.write(b); // short 출력 가장 가까운 형 변환
 		
 		short ss = 10;
-		oo.write(ss);
+		oo.write(ss); // short
 		
 		Short ss1 = 10;
-		oo.write(ss1);
+		oo.write(ss1); //Short
 		
 		long a = 10;
-		oo.write(a);
+		oo.write(a); // Long 출력,가까운 데이터 타입의형 변환보다  warapper 클래스로 형변환
+		
 		
 		test5 t5= new test5();
 		
-		t5.sub1();
+		t5.sub1(); //int a =0 으로 초기화
+	
 		//t5.sub2(); 오류 , 객체는 초기화되지 않는다.
-		t5.sub3();
+		
+		t5.sub3();// Integer c=0 이고 int 형으로 오토박싱되어 int c=0으로 초기화
 			
 		
 		User2 u2 = new User2();
@@ -42,6 +45,7 @@ public class test5 {
 		
 	} //메인 메소드 종료
 
+	
 	public void sub1(){
 		int s = a+10;
 		System.out.println(s);
