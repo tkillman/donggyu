@@ -10,14 +10,17 @@ public class UserApp {
 		int ch;
 
 		UserService service = new UserService();
-		UserResult result = new UserResult(service); 
+		
 		
 		try {
 
 			while (true) {
 				do {
+					
 					System.out.print("1.입력 2. 출력 3. 종료 => ");
 					ch = sc.nextInt();
+					
+					
 
 				} while (ch < 1 || ch > 3);
 
@@ -25,10 +28,14 @@ public class UserApp {
 				case 1:
 					service.input();
 					break;
+			
 				case 2:
 				
+					UserResult result = new UserResult(service);
 					result.print();
+					
 					break;
+					
 				case 3:
 					System.out.println("종료합니다");
 					System.exit(0);
@@ -40,6 +47,8 @@ public class UserApp {
 
 		} catch (Exception e) {
 			// TODO: handle exception
+			
+			
 			e.printStackTrace();
 		}
 

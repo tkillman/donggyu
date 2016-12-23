@@ -9,7 +9,7 @@ public class UserService {
 	
 	private int cnt ; // 몇명까지 받았는가?
 	private Scanner sc = new Scanner(System.in);
-
+	
 	
 	public User[] getData() {
 		return data;
@@ -20,6 +20,9 @@ public class UserService {
 	}
 
 	public void input() {
+		
+		data[cnt] = new User();
+		
 		if (cnt >= 10) {
 
 			System.out.println("정원 초과....");
@@ -27,11 +30,10 @@ public class UserService {
 
 		}
 		
-		
-		data[cnt] = new User();
 		//!!!!!! 오늘의 핵심!!!!! 변수만  선언한 것으로 끝나지 말고 생성자로 메모리 할당하자!
 		System.out.print("이름 :?");
 		data[cnt].setName(sc.next()); 
+		
 		
 		// nullpointexception 
 		
@@ -39,7 +41,8 @@ public class UserService {
 		data[cnt].setAge(sc.nextInt());
 		
 		cnt++;
-		System.out.println("cnt 값 : " +cnt);
+		
+		System.out.println("service 객체에 있는 cnt 숫자" +cnt);
 		
 	} //input 메소드 종료
 

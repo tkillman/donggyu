@@ -12,8 +12,8 @@ public class UserResult {
 		
 		// 서비스의 객체를 아직 생성하지 않았다.
 		this.service = service;//!!!!!!!!!!!!!!! 생성된 객체를 넘겨받았다.
-		data = this.service.getData();
-		cnt = this.service.getCount();
+		data = service.getData();
+		cnt = service.getCount();
 		
 
 	}
@@ -21,9 +21,9 @@ public class UserResult {
 	
 	public void print() {
 
-		for (int i = 0; i <= cnt; i++) {
+		for (int i = 0; i < cnt; i++) {
 			
-			System.out.println("cnt 숫자 :" +cnt);
+			System.out.println("UserResult 에 있는 service 객체의 cnt 숫자 :" +cnt);
 			
 			System.out.println(data[i].getName() + ":" + data[i].getAge());
 		}

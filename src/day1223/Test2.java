@@ -17,6 +17,7 @@ public class Test2 {
 
 			str += "a";
 		}
+		
 		long e = System.currentTimeMillis();
 
 		System.out.println("문자열 길이 :" + str.length());
@@ -25,6 +26,7 @@ public class Test2 {
 
 	}
 
+	
 	public static void stringBuffertest() {
 
 		Runtime rt = Runtime.getRuntime();
@@ -56,6 +58,7 @@ public class Test2 {
 		stringTest();
 		
 		System.out.println();
+		
 		stringBuffertest();
 		
 		// 메모리 사용량과  처리 속도가 굉장한 차이가 있다.
