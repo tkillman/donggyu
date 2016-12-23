@@ -26,7 +26,7 @@ public class UserApp {
 					service.input();
 					break;
 				case 2:
-					
+				
 					result.print();
 					break;
 				case 3:
