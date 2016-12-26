@@ -82,7 +82,7 @@ public class Test3 {
 		System.out.println("--------9.마지막 파일 확장자만 추출하고 싶을 때---------");
 		//마지막 문자 추출
 		s2 = s1.substring(s1.lastIndexOf("."));
-		System.out.println(s2);
+		System.out.println(s2); //없으면 -1을 리턴
 		
 		//1~100까지 출력하는데 10단위로 출력하고 369는 별표
 		
