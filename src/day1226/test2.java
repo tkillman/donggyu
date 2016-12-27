@@ -4,12 +4,14 @@ public class test2 {
 
 	
 	public static void main(String[] args) {
+	
 		
 		
 		/*
+		 * A가 부모 ---- B,C가 A를 상속한 형제
 		A a = new A();
 		B b = new B();
-		C c= new C();
+		C c=  new C();
 		
 		A aa= b; // upCasting (O)
 		B bb= a; // down casting (X 컴파일러 오류)
@@ -35,13 +37,6 @@ public class test2 {
 		
 		*/
 		
-		
-		
-		
-		
-		
 	}
-	
-	
 	
 }

@@ -3,7 +3,8 @@ package day1226;
 public class Test3 {
 
 	public static void main(String[] args) {
-			
+	
+		//******** 업 캐스팅이 있었어야지 다운 캐스팅이 가능하다***************//////////
 		User1 oo = new Demo1(); // up casting 
 		
 		System.out.println(oo.b); // 5 , new를 하는 순간 진짜는 User1이 메모리 할당을 받는다. 필드는 자기 자신이 나온다.
@@ -16,6 +17,7 @@ public class Test3 {
 		oo.sub(); // Demo1 , 만약 User1에 sub() 메소드가 없으면 오류가 난다. , 자식 객체를 가리키 긴 하지만 컴퓨터는 User1만을 본다.
 		
 		Demo1 dd = (Demo1) oo; // down casting 
+		
 		dd.print();
 		
 		if(dd instanceof Demo1){
@@ -25,23 +27,7 @@ public class Test3 {
 		
 		Object ob = new Demo1(); // 업캐스팅
 		System.out.println(((Demo1) ob).a);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	}
+			}
 
 }
 
