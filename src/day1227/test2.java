@@ -8,11 +8,9 @@ package day1227;
 *compare() //비교하고
 *swap() //바꿔주고
 *length() // 데이터가 몇개인지
-*
+
+
 *sort() ==> 버블 소트
-*
-*
-*
 *
 *
 */
@@ -23,7 +21,8 @@ public class test2 {
 
 		int[] data = new int[] { 6, 10, 8, 2 };
 
-		SortInt s = new SelectionSortInt();
+		//셀렉션 소트 사용
+		/*SortInt s = new SelectionSortInt();
 
 		s.sort(data);
 
@@ -31,9 +30,11 @@ public class test2 {
 			System.out.print(n + " ");
 
 		}
-
+*/
 		System.out.println();
 
+		
+		// 버블 소트 사용
 		SortInt b = new BubbleSortInt();
 
 		b.sort(data);
@@ -107,23 +108,26 @@ class BubbleSortInt extends SortInt {
 
 	@Override
 	protected void sorting() {
+		
 		int pass = 1;
 		boolean b;
 
 		do {
+			
 			b = false;
+			
+			
 			for (int i = 0; i < length() - pass; i++) {
 				if (compare(i, i + 1) > 0) {
 					swap(i, i + 1);
+					b= true;
 				}
 
 			}
+			
 			pass++;
 		} while (b);
 
 	}
 
 }
-
-
-

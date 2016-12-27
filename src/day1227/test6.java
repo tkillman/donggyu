@@ -38,12 +38,10 @@ interface User4{
 	
 }
 
+
 @FunctionalInterface
 interface Demo4{ // FunctionalInterface , 람다식을 사용하기 위해서 붙여주면 메소드를 하나만 정의해야한다.
 	
 	public void print();
 	
 }
-
-
-

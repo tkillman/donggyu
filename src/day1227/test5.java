@@ -11,6 +11,7 @@ public class test5 {
 		
 	//	User3 ob = new User3(); 오류 , User3은 Demo3에 속해있으므로
 		
+		
 		//static 중첩 클래스 사용
 		Demo3.User3 ob = new Demo3.User3(); //Demo3의 객체가 없어도 User3의 객체 생성이 가능, static 중첩 클래스이므로
 		ob.write();
@@ -42,6 +43,7 @@ class Demo3{
 	//static 중첩 클래스
 	public static class User3{ //클래스 안에 클래스, 메소드 안에 클래스 가능.
 		int c=30;
+	
 		public void write(){
 			//System.out.println(b); 에러발생 , b를 사용 못하는 것은 Demo3이 메모리 할당을 받아야만 사용 가능하므로 static 중첩 클래스에서는 쓸 수 없다.
 			System.out.println(a + " : " + c);

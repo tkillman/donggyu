@@ -16,23 +16,20 @@ public class test4 {
 		
 		a2.write();
 		
-		
-		
-		
-		
 	}
 
 }
 
 
 interface Ademo2{
-	public final int PI = 10; // public fianl 이 무조건 붙는다. ==값의 수정이 불가능.
+	public final int PI = 10; // public final 이 무조건 붙는다. ==값의 수정이 불가능.
 	
 	public void print();
 	
 	
 	public default void write(){ // 자바 8부터 ~~~~ default를 붙이는 경우 인터페이스에서도 메소드를 정의 가능 
 		System.out.println("default 메소드 .....");
+	
 	}
 	
 	
