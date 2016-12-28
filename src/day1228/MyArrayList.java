@@ -4,7 +4,6 @@ public class MyArrayList<E> implements MyList<E> {
 
 	/*
 	 * 데이터 : 진짜 데이터를 저장할 배열 [] , 사이즈 담을 변수
-	 * 
 	 */
 
 	private Object[] elementData;
@@ -62,6 +61,7 @@ public class MyArrayList<E> implements MyList<E> {
 			capacityAllocation(elementData.length + 10);
 		}
 
+		
 		for (int i = size - 1; i >= index; i--) { // 한칸씩 뒤로 미룬다 . 1,2,3 에 앞에 10을
 													// 추가하면 10,1,2,3 이 되므로
 			elementData[i + 1] = elementData[i];
@@ -70,7 +70,7 @@ public class MyArrayList<E> implements MyList<E> {
 		elementData[index] = element;
 		size++;
 
-		return false;
+		return true;
 
 	}
 
@@ -113,22 +113,31 @@ public class MyArrayList<E> implements MyList<E> {
 														// unchecked 예외.
 		}
 
-		// 뒤에 있는걸 한칸씩 땡겨온다.
+		
+		
+		// 뒤에 있는걸 한칸씩 땡겨온다. 							1 2 3      2 3 3 
 
-		E remove = (E) elementData[index];
-
-		for (int i = 0; i < size-1 ; i++) {
-			elementData[i - 1] = elementData[i];
-			size--;
-			elementData[size] = null; // 맨 마지막에 있는 걸 하나
+		E remove = elementData(index);
+		
+		for (int i = index+1 ; i<=size-1 ; i++) {
+		
+			elementData[i - 1] =elementData[i];
+			 // 맨 마지막에 있는 걸 하나
 
 		}
+		
+		elementData[size] = null;
+		size--;
+	
 		return remove;
 
 	}
 
 	@Override
+	
 	public boolean remove(E element) {
+		
+		
 		for (int i = 0; i < size; i++) {
 			if (elementData[i].equals(element)) {
 				remove(i);
@@ -174,6 +183,8 @@ public class MyArrayList<E> implements MyList<E> {
 		return elementData.length; // 최대 넣을 수 있는 용량
 	}
 
+	
+	
 	@Override
 	public MyListIterator<E> listIterator() {
 
@@ -181,6 +192,7 @@ public class MyArrayList<E> implements MyList<E> {
 		return new MyListIteratorImpl();
 	}
 
+	
 	private class MyListIteratorImpl implements MyListIterator<E>{
 		
 		private int nextIndex = 0;
@@ -192,6 +204,7 @@ public class MyArrayList<E> implements MyList<E> {
 			
 		}
 
+		
 		@Override
 		public E next() {
 			
@@ -199,12 +212,14 @@ public class MyArrayList<E> implements MyList<E> {
 			
 		}
 
+		
 		@Override
 		public boolean hasPrevious() {
 			
 			return nextIndex>0;
 		}
 
+		
 		@Override
 		public E previous() { //이전 데이터를 리턴 받음.
 			
@@ -212,12 +227,14 @@ public class MyArrayList<E> implements MyList<E> {
 			
 		}
 
+		
 		@Override
 		public void add(E element) {
 			MyArrayList.this.add(nextIndex++,element);
 			
 		}
 
+		
 		@Override
 		public void remove() {
 			MyArrayList.this.remove(nextIndex-1);
@@ -230,6 +247,7 @@ public class MyArrayList<E> implements MyList<E> {
 	
 	@Override
 	public String toString() {
+		
 		StringBuffer sb = new StringBuffer("[");
 		for (int i = 0; i < size; i++) {
 			sb.append(elementData[i]);

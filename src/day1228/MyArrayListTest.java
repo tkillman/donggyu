@@ -1,5 +1,9 @@
 package day1228;
 
+import java.util.ArrayList;
+
+import day1228.MyArrayList_m.MyArrayListIterator;
+
 public class MyArrayListTest {
 	
 	
@@ -13,17 +17,14 @@ public class MyArrayListTest {
 		mylist.add("hello2");
 		mylist.add("hello3");
 		mylist.add("hello4");
+		mylist.remove(4);
+	
 		
-		System.out.println(mylist.size());
-		mylist.remove(1);
+		System.out.println(mylist);
+	
 		
-		MyListIterator<String> iterator = mylist.listIterator();
 		
-		while(iterator.hasNext()){
-			String str = iterator.next();
-			System.out.print(str +" ");
-			
-		}
+		
 		
 		
 	}

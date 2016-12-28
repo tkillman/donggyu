@@ -10,9 +10,6 @@ package day1228;
 // 뮤택스.. 세마포.... 동기화에 관련된 용어
 
 
-
-
-
 //추상화... 데이터 상태 , 메소드 기능 
 
 public interface MyListIterator<E> { //설계도 
